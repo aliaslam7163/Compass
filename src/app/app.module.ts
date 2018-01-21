@@ -8,6 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { DirectoryPage } from '../pages/directory/directory';
+import { TodosPage } from '../pages/todos/todos';
 
 /* Providers created by development team */
 import { StorageProvider } from '../providers/storage/storage';
@@ -40,6 +41,7 @@ var firebaseAuth = {
     MyApp,
     HomePage,
     DirectoryPage,
+    TodosPage,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +57,7 @@ var firebaseAuth = {
     MyApp,
     HomePage,
     DirectoryPage,
+    TodosPage,
   ],
   providers: [
     StatusBar,

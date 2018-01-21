@@ -22,15 +22,26 @@ import { Network } from '@ionic-native/network';
   templateUrl: 'todos.html',
 })
 export class TodosPage {
-  todos : any;
+  localTODOS = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              private firebase:FirebaseProvider,
+              private storageProvider:StorageProvider,
+              private storage: Storage) {
+    this.storageProvider.todosItems();
   }
 
-  getTodosItem()
-  {
-
+  getTODOSItems(){
+    this.storage.get('todos').then((todos) =>{
+      if(todos)
+      {
+        this.localTODOS = todos;
+        console.log(this.localTODOS);
+      }
+    })
   }
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TodosPage');
